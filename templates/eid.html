@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="display-5">Question {{eid}}</h1>
+    <hr class="my-2">
+    {% include filename %}
+    <hr class="my-2">
+
+    <form class="form-group" action="{{url_for('grade')}}" method="POST">
+        <label for = "yourname">Please enter your name</label>
+        <input class = "form-control " id = "yourname" name = "username" type="text" placeholder="Name" required><br>
+        <label for="myTextArea">Please type your essay below &nbsp; OR &nbsp;    
+            <label class="btn btn-primary">
+                Upload File <input type="file" id = "fileinput" hidden>
+            </label>
+        </label>
+        <textarea class="form-control" id="myTextArea" rows="10" name="textArea" placeholder = "Essay text.." required></textarea> 
+        <br>
+        <div class="wrapper">
+            <button class="btn btn-success">Grade Me</button>
+        </div>
+    </form>
+</div>
+<script type='text/javascript'>
+    (function() {
+        var input = document.getElementById("fileinput");
+        input.addEventListener("change", loadFile, false);
+    
+        function loadFile() {
+            var file, fr;
+    
+            if (typeof window.FileReader !== 'function') {
+                alert("The file API isn't supported on this browser yet.");
+                return;
+            }
+    
+            if (!input.files) {
+                alert("This browser doesn't seem to support the `files` property of file inputs.");
+            } else if (!input.files[0]) {
+                alert("Please select a file before clicking 'Load'");
+            } else {
+                file = input.files[0];
+                fr = new FileReader();
+                fr.onload = receivedText;
+                fr.readAsText(file);
+            }
+    
+            function receivedText() {
+                document.getElementById("myTextArea").value = fr.result;
+            }
+        }
+    })();
+    </script>
+      
+{% endblock %}

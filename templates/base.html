@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!--Font Link-->
+    <link href="https://fonts.googleapis.com/css?family=Caveat:400,700&display=swap" rel="stylesheet">
+        
+    <!-- Custom styles -->
+    <style>
+        
+        html {position: relative; min-height: 100%;}
+        
+        body {margin-bottom: 60px;}
+        
+        .footer {position: absolute; bottom: 0; width: 100%; height: 60px; line-height: 60px;
+                background-color: #f5f5f5;}
+        .wrapper {text-align: right;}
+
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Fixed navbar header-->
+      <nav class="navbar navbar-expand-sm navbar-dark py-4" style="background-color: #ffaa2b">
+        <a class="navbar-brand" href="{{url_for('essays')}}" style="font-weight: 800; font-size: 40px; color: black;" >Essay Grader&nbsp;</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                {% block active %}
+                {% endblock active %}
+            </ul>
+        </div>
+    </nav>    
+    
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main">
+    {% block content %}
+    
+    {% endblock %}
+    </main>
+
+    <!-- Fixed footer -->
+    <footer class="footer">
+      <div class="container-fluid">
+        <span class="text-muted">Created by Vinay Sanga, Harshavardhan Vidap &COPY; 2020</span> 
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
