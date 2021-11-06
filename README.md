@@ -1,6 +1,7 @@
 # Automated Essay Grading using LSTM
 
 This is my final project where I used LSTM-RNN for grading human-written essays. The grader can grade essays with an accuracy of 96.2%. The project is created using Flask micro web-framework. 
+
 Dataset used : [Automated Essay Scoring](https://www.kaggle.com/c/asap-aes/data)
 
 ## Steps to run:
